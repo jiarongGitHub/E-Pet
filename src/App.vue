@@ -1,20 +1,14 @@
 <template>
   <div>
-    <headComponent/>
-    <carousel/>
-    <footerComponent/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-  import headComponent from './components/header/header.vue'
-  import carousel from './components/carousel/carousel.vue'
-  import footerComponent from './components/footer/footer.vue'
+  import appComponent from './pages/app/app.vue'
   export default {
     components: {
-      headComponent,
-      carousel,
-      footerComponent
+      appComponent
     }
   }
 </script>

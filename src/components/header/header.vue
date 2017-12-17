@@ -16,9 +16,9 @@
             <span class="serach-ico"></span>
           </a>
         </p>
-        <a href="https://wap.epet.com/wappms/pms.html?fw=0">
-          <img src="//static.epetbar.com/static_web/wap/src/images/mydope.png" alt="">
-        </a>
+       <router-link to="/login">
+         <img src="//static.epetbar.com/static_web/wap/src/images/mydope.png" alt="">
+       </router-link>
       </div>
     </div>
 

@@ -11,8 +11,15 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/api':{
+      '/api1':{
         target:'https://mallcdn.api.epet.com',
+        changeOrigin:true,
+        pathRewrite:{
+          '^/api1': '/'
+        }
+      },
+      '/api':{
+        target:'http://localhost:3000',
         changeOrigin:true,
         pathRewrite:{
           '^/api': '/'

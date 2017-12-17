@@ -202,6 +202,7 @@
     mounted(){
      setTimeout(()=>{
        this.newArr=this.dogInfo.datas.filter((data,index)=>data.type==='13'&&index>12)
+       this.newArr.splice(this.newArr.length-1,1)
      },1000)
 
     },
