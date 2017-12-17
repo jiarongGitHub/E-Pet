@@ -2,18 +2,26 @@
   <div>
     <div class="footernav bottom_menu_bar bgfff bottomBox">
       <ul class="clearfix footernav_ul bgfff">
-        <li class="index-a dogon"><a href="https://wap.epet.com/main.html?pet_type=dog" class="db">
-          <span class="icon-home-outline"></span>
-        </a></li>
-        <li class="type-a"><a href="https://wap.epet.com/category.html?pet_type=dog" class="db">
-          <span class="icon-shopping-cart"></span>
-        </a></li>
-        <li class="cart-a"><a href="https://wap.epet.com/cart/main.html" class="db">
-          <span class="icon-file-text2"></span>
-        </a></li>
-        <li class="myepet-a"><a href="https://wap.epet.com/user/UserCenter.html" class="db">
-          <span class="icon-smile"></span>
-        </a></li>
+        <li class="index-a dogon">
+          <a href="https://wap.epet.com/main.html?pet_type=dog" class="db">
+            <span class="icon-home-outline"></span>
+          </a>
+        </li>
+        <li class="type-a">
+          <a href="https://wap.epet.com/category.html?pet_type=dog" class="db">
+            <span class="icon-file-text2"></span>
+          </a>
+        </li>
+        <li class="cart-a">
+          <a href="https://wap.epet.com/cart/main.html" class="db">
+            <span class="icon-shopping-cart"></span>
+          </a>
+        </li>
+        <li class="myepet-a">
+          <a href="https://wap.epet.com/user/UserCenter.html" class="db">
+            <span class="icon-smile"></span>
+          </a>
+        </li>
       </ul>
     </div>
   </div>

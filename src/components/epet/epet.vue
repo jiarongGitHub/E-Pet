@@ -24,7 +24,6 @@
 
     </div>
     <xline/>
-
     <!--潮品视频-->
     <div class="custom_tite">
       <div class="leftimg">
@@ -34,20 +33,19 @@
     </div>
     <div class="fashion">
       <ul class="cmVideoList cmVideoListIndex">
-        <li>
-          <a href="https://wap.epet.com/article/video/View.html?vid=19&fw=0">
+        <li v-if="dogInfo.datas">
+          <a :href="dogInfo.datas[10].value[0].share_target.param.url">
             <div class="relative imgBox overflow">
-              <img src="https://img1.epetbar.com/2017-12/13/13/bf5a66590af3b4c59f7bc0de38cb8060.jpg@!500w0h" alt="">
+              <img :src="dogInfo.datas[10].value[0].share_target.param.image" alt="">
               <span class="cmallPlayIco"></span>
             </div>
-
             <div class="ft12 c999 pad10 ftc">
-              <div class="textover">KIWI KITCHENS狗罐头 一罐装下93%鲜肉</div>
+              <div class="textover">{{dogInfo.datas[10].value[0].share_target.param.title}}</div>
               <div>
                 <span class="cmallViewIco"></span>
-                <i>15546</i>
+                <i>{{dogInfo.datas[10].value[0].visit}}</i>
                 <span class="ml10 mr10">|</span>
-                02:15
+                {{dogInfo.datas[10].value[0].video_size}}
               </div>
             </div>
           </a>
@@ -64,36 +62,15 @@
       <more/>
     </div>
 
-    <div class="divboximg flex">
-      <a href="https://wap.epet.com/group/v226/main.html?pettype=dog&pet_type=dog&fw=0">
-        <img src="https://img2.epetbar.com/nowater/2017-12/14/14/0ef1597575070d85b63b4c224732b901.jpg@!water" alt="">
-      </a>
+    <div v-for="(item,index) in newArr" :key="index">
+      <div class="divboximg flex">
+        <a :href="item.content_images[0][0].target.param">
+          <img :src="item.content_images[0][0].image" alt="">
+        </a>
+      </div>
+      <xline/>
     </div>
-    <xline/>
-    <div class="divboximg flex">
-      <a href="https://wap.epet.com/group/v226/main.html?pettype=dog&pet_type=dog&fw=0">
-        <img src="https://img2.epetbar.com/nowater/2017-12/13/20/d7d62c5b10a607f7ef6de8011d8ed10b.jpg@!water" alt="">
-      </a>
-    </div>
-    <xline/>
-    <div class="divboximg flex">
-      <a href="https://wap.epet.com/group/v226/main.html?pettype=dog&pet_type=dog&fw=0">
-        <img src="https://img1.epetbar.com/2017-12/15/18/ff046ff94b84b33badc9780ceef1acb8.jpg@!water" alt="">
-      </a>
-    </div>
-    <xline/>
-    <div class="divboximg flex">
-      <a href="https://wap.epet.com/group/v226/main.html?pettype=dog&pet_type=dog&fw=0">
-        <img src="https://img2.epetbar.com/nowater/2017-12/15/18/fc2dd84cdfb213ed86eb42074b4de7b6.jpg@!water" alt="">
-      </a>
-    </div>
-    <xline/>
-    <div class="divboximg flex">
-      <a href="https://wap.epet.com/group/v226/main.html?pettype=dog&pet_type=dog&fw=0">
-        <img src="https://img2.epetbar.com/nowater/2017-12/13/20/57a51566b3ea6250aaaec8d6adbfa7de.jpg@!water" alt="">
-      </a>
-    </div>
-    <xline/>
+
 
    <!-- 体验馆-->
     <div class="custom_tite">
@@ -120,6 +97,7 @@
     </div>
 
     <div style="height: 160px"></div>
+    <xline/>
 
     <!--萌宠说-->
     <div class="custom_tite">
@@ -138,7 +116,7 @@
             </div>
 
             <div class="ft12 c999 pad10 ftc">
-              <div class="textover">第1期-狗为什么会互相闻菊花？</div>
+              <div class="textover">第1期-狗为什么会互相闻菊花?</div>
               <div>
                 <span class="cmallViewIco"></span>
                 <i>7955</i>
@@ -213,8 +191,19 @@
   import more from '../more/more.vue'
   import {mapState} from 'vuex'
   export default {
+    data(){
+      return {
+        newArr:[],
+      }
+    },
     computed:{
       ...mapState(['dogInfo'])
+    },
+    mounted(){
+     setTimeout(()=>{
+       this.newArr=this.dogInfo.datas.filter((data,index)=>data.type==='13'&&index>12)
+     },1000)
+
     },
     components:{
       xline,
