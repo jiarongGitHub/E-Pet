@@ -16,9 +16,15 @@
             <span class="serach-ico"></span>
           </a>
         </p>
-       <router-link to="/login">
-         <img src="//static.epetbar.com/static_web/wap/src/images/mydope.png" alt="">
-       </router-link>
+        <div v-if="!user">
+          <router-link to="/login/login1">
+            <img src="//static.epetbar.com/static_web/wap/src/images/mydope.png" alt="">
+          </router-link>
+        </div>
+        <div v-if="user">
+          <img src="./images/icon1.jpg" alt="">
+        </div>
+
       </div>
     </div>
 
@@ -45,6 +51,11 @@
   import BScroll from 'better-scroll'
   import {mapState} from 'vuex'
   export default {
+    data(){
+      return {
+        user: {}
+      }
+    },
     computed:{
       ...mapState(['dogInfo'])
     },
@@ -59,6 +70,8 @@
           })
         }
       })
+
+      this.user = JSON.parse(sessionStorage.getItem('user'))
     }
   }
 </script>

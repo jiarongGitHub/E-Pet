@@ -66,6 +66,9 @@
               position: 'bottom',
               duration: 2000
             });
+            //跳回主路由
+            this.$router.push({path: '/app'})
+            sessionStorage.setItem('user', JSON.stringify({user: user.phone}))
           } else {
             Toast({
               message: '登陆失败, 请输入正确的手机号和验证码',
