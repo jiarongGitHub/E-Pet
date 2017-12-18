@@ -1,3 +1,6 @@
 export default {
-  dogInfo:{}
+  dogInfo:{},
+  dogType:{},
+  dogTypeDet:{},
+  category:{}
 }

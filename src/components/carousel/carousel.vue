@@ -26,7 +26,7 @@
     <div class="columnnavdiv">
       <div v-if="dogInfo.datas">
         <ul class="clearfix hottype pt10 pb10">
-          <li v-for="(menu,index) in dogInfo.datas[2].menus" class="fl" :key="index">
+          <li v-for="(menu,index) in newArr[0].menus" class="fl" :key="index">
             <a href="">
               <img :src="menu.image" alt="">
             </a>
@@ -129,6 +129,11 @@
   import epet from '../epet/epet.vue'
   import {mapState} from 'vuex'
   export default {
+    data(){
+      return{
+        newArr:[]
+      }
+    },
     computed:{
       ...mapState(['dogInfo'])
     },
@@ -141,7 +146,16 @@
           })
         }
       })
-
+      if(this.dogInfo.datas){
+        this.newArr=this.dogInfo.datas.filter(data=>data.type==='3'&&data.index==='2435')
+      }
+    },
+    watch: {
+      dogInfo () {
+        if(this.dogInfo.datas){
+          this.newArr=this.dogInfo.datas.filter(data=>data.type==='3'&&data.index==='2435')
+        }
+      }
     },
     components:{
       more,

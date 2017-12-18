@@ -15,13 +15,13 @@
 
           <div class="es_por4">
             <ul>
-              <li>
+              <li @click="showI(true)">
                 <router-link to="/login/login1">普通登录</router-link>
-                <i></i>
+                <i v-show="isLogin1"></i>
               </li>
-              <li>
+              <li @click="showI(false)">
                 <router-link to="/login/login2">手机动态密码登录</router-link>
-                <i></i>
+                <i v-show="isLogin2"></i>
               </li>
             </ul>
           </div>
@@ -34,7 +34,23 @@
 </template>
 <script>
   export default {
-
+    data(){
+      return{
+        isLogin1:true,
+        isLogin2:false
+      }
+    },
+    methods:{
+      showI(isLogin1){
+        if(isLogin1){
+          this.isLogin1=true
+          this.isLogin2=false
+        }else{
+          this.isLogin1=false
+          this.isLogin2=true
+        }
+      }
+    }
   }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">

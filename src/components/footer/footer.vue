@@ -3,14 +3,14 @@
     <div class="footernav bottom_menu_bar bgfff bottomBox">
       <ul class="clearfix footernav_ul bgfff">
         <li class="index-a dogon">
-          <a href="https://wap.epet.com/main.html?pet_type=dog" class="db">
+          <router-link to="/app">
             <span class="icon-home-outline"></span>
-          </a>
+          </router-link>
         </li>
-        <li class="type-a">
-          <a href="https://wap.epet.com/category.html?pet_type=dog" class="db">
-            <span class="icon-file-text2"></span>
-          </a>
+        <li class="type-a" @click="dogTypeCli">
+          <router-link to="/categroy/sort">
+             <span class="icon-file-text2"></span>
+          </router-link>
         </li>
         <li class="cart-a">
           <a href="https://wap.epet.com/cart/main.html" class="db">
@@ -18,16 +18,22 @@
           </a>
         </li>
         <li class="myepet-a">
-          <a href="https://wap.epet.com/user/UserCenter.html" class="db">
+          <router-link to="/login/login1">
             <span class="icon-smile"></span>
-          </a>
+          </router-link>
         </li>
       </ul>
     </div>
   </div>
 </template>
 <script>
-  export default {}
+  export default {
+    methods:{
+      dogTypeCli(){
+        this.$store.dispatch('reqDogType')
+      }
+    }
+  }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
 .footernav

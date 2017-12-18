@@ -1,24 +1,24 @@
 <template>
   <div class="currency_ad">
     <!--E宠物-->
-    <div class="divboximg flex" v-if="dogInfo.datas">
-      <a :href="dogInfo.datas[5].content_images[0][0].target.param">
-        <img :src="dogInfo.datas[5].content_images[0][0].image" alt="">
+    <div class="divboximg flex" v-if="ePetArr[0]">
+      <a :href="ePetArr[0].content_images[0][0].target.param">
+        <img :src="ePetArr[0].content_images[0][0].image" alt="">
       </a>
     </div>
     <xline/>
-    <div class="currency-adcon" v-if="dogInfo.datas">
+    <div class="currency-adcon" v-if="ePetArrR[0]">
       <div class="divimg1">
-        <a :href="dogInfo.datas[7].content_images[0][0].target.param">
-          <img :src="dogInfo.datas[7].content_images[0][0].image" alt="">
+        <a :href="ePetArrR[0].content_images[0][0].target.param">
+          <img :src="ePetArrR[0].content_images[0][0].image" alt="">
         </a>
       </div>
       <div class="divimg2">
-        <a :href="dogInfo.datas[7].content_images[1][0].target.param">
-          <img :src="dogInfo.datas[7].content_images[1][0].image" alt="">
+        <a :href="ePetArrR[0].content_images[1][0].target.param">
+          <img :src="ePetArrR[0].content_images[1][0].image" alt="">
         </a>
-        <a :href="dogInfo.datas[7].content_images[1][1].target.param">
-          <img :src="dogInfo.datas[7].content_images[1][1].image" alt="">
+        <a :href="ePetArrR[0].content_images[1][1].target.param">
+          <img :src="ePetArrR[0].content_images[1][1].image" alt="">
         </a>
       </div>
 
@@ -33,19 +33,19 @@
     </div>
     <div class="fashion">
       <ul class="cmVideoList cmVideoListIndex">
-        <li v-if="dogInfo.datas">
-          <a :href="dogInfo.datas[10].value[0].share_target.param.url">
+        <li v-if="chaoArr[0]">
+          <a :href="chaoArr[0].value[0].share_target.param.url">
             <div class="relative imgBox overflow">
-              <img :src="dogInfo.datas[10].value[0].share_target.param.image" alt="">
+              <img :src="chaoArr[0].value[0].share_target.param.image" alt="">
               <span class="cmallPlayIco"></span>
             </div>
             <div class="ft12 c999 pad10 ftc">
-              <div class="textover">{{dogInfo.datas[10].value[0].share_target.param.title}}</div>
+              <div class="textover">{{chaoArr[0].value[0].share_target.param.title}}</div>
               <div>
                 <span class="cmallViewIco"></span>
-                <i>{{dogInfo.datas[10].value[0].visit}}</i>
+                <i>{{chaoArr[0].value[0].visit}}</i>
                 <span class="ml10 mr10">|</span>
-                {{dogInfo.datas[10].value[0].video_size}}
+                {{chaoArr[0].value[0].video_size}}
               </div>
             </div>
           </a>
@@ -62,7 +62,7 @@
       <more/>
     </div>
 
-    <div v-for="(item,index) in newArr" :key="index">
+    <div v-for="(item,index) in temaiArr" :key="index">
       <div class="divboximg flex">
         <a :href="item.content_images[0][0].target.param">
           <img :src="item.content_images[0][0].image" alt="">
@@ -70,7 +70,6 @@
       </div>
       <xline/>
     </div>
-
 
    <!-- 体验馆-->
     <div class="custom_tite">
@@ -193,18 +192,37 @@
   export default {
     data(){
       return {
-        newArr:[],
+        ePetArr:[],
+        ePetArrR:[],
+        chaoArr:[],
+        temaiArr:[],
       }
     },
     computed:{
       ...mapState(['dogInfo'])
     },
     mounted(){
-     setTimeout(()=>{
-       this.newArr=this.dogInfo.datas.filter((data,index)=>data.type==='13'&&index>12)
-       this.newArr.splice(this.newArr.length-1,1)
-     },1000)
+      if(this.dogInfo.datas){
+        this.ePetArr=this.dogInfo.datas.filter(data=>data.type==='13'&&data.index==='2936')
+        this.ePetArrR=this.dogInfo.datas.filter(data=>data.type==='13'&&data.index==='2938')
+        this.chaoArr=this.dogInfo.datas.filter(data=>data.type==='104'&&data.index==='2117')
+        this.temaiArr=this.dogInfo.datas.filter((data,index)=>data.type==='13'&&data.index!=='3010')
+        this.temaiArr.splice(0,2);
+        this.temaiArr.splice(this.temaiArr.length-1,1);
+      }
 
+    },
+    watch: {
+      dogInfo () {
+        if(this.dogInfo.datas){
+          this.ePetArr=this.dogInfo.datas.filter(data=>data.type==='13'&&data.index==='2936')
+          this.ePetArrR=this.dogInfo.datas.filter(data=>data.type==='13'&&data.index==='2938')
+          this.chaoArr=this.dogInfo.datas.filter(data=>data.type==='104'&&data.index==='2117')
+          this.temaiArr=this.dogInfo.datas.filter((data,index)=>data.type==='13'&&data.index!=='3010')
+          this.temaiArr.splice(0,2);
+          this.temaiArr.splice(this.temaiArr.length-1,1);
+        }
+      }
     },
     components:{
       xline,

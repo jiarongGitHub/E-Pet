@@ -5,9 +5,11 @@ import appComponent from '../pages/app/app.vue'
 import loginComponent from '../pages/login/login.vue'
 import login1Component from '../pages/login/login1.vue'
 import login2Component from '../pages/login/login2.vue'
+import categroyComponent from '../pages/categroy/categroy.vue'
+import sortComponent from '../pages/categroy/sort.vue'
+import brandComponent from '../pages/categroy/brand.vue'
 
 export default new VueRouter({
-  linkActiveClass: 'active',
   routes:[
     {
       path:'/',
@@ -16,6 +18,21 @@ export default new VueRouter({
     {
       path:'/app',
       component:appComponent
+    },
+    {
+      path:'/categroy',
+      component:categroyComponent,
+      children:[
+        {
+          path: 'sort',
+          component: sortComponent
+        },
+        {
+          path: 'brand',
+          component: brandComponent
+        }
+
+      ]
     },
     {
       path:'/login',
