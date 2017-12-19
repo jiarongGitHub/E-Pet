@@ -17,10 +17,14 @@
             <span class="icon-shopping-cart"></span>
           </a>
         </li>
-        <li class="myepet-a">
+        <li class="myepet-a" v-if="!user">
           <router-link to="/login/login1">
             <span class="icon-smile"></span>
           </router-link>
+        </li>
+
+        <li class="myepet-a" v-if="user" @click="userInfo">
+          <img src="./icon1.jpg" alt="">
         </li>
       </ul>
     </div>
@@ -28,10 +32,21 @@
 </template>
 <script>
   export default {
+    data(){
+      return{
+        user:{}
+      }
+    },
     methods:{
       dogTypeCli(){
         this.$store.dispatch('reqDogType')
+      },
+      userInfo(){
+        alert('用户中心')
       }
+    },
+    mounted(){
+      this.user = JSON.parse(sessionStorage.getItem('user'))
     }
   }
 </script>

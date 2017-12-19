@@ -25,7 +25,7 @@
 
     <div class="columnnavdiv">
       <div v-if="dogInfo.datas">
-        <ul class="clearfix hottype pt10 pb10">
+        <ul class="clearfix hottype pt10 pb10" v-if="newArr[0]">
           <li v-for="(menu,index) in newArr[0].menus" class="fl" :key="index">
             <a href="">
               <img :src="menu.image" alt="">

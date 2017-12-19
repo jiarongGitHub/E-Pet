@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="categroyMain">
     <div class="top">
       <div class="sort common" >
         <router-link to="/categroy/sort">
@@ -15,8 +15,9 @@
         <img src="//static.epetbar.com/static_web/wap/src/images/background/search-ico.png" alt="" class="search">
       </a>
     </div>
-
-    <router-view></router-view>
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
     <footerCompontent/>
   </div>
 </template>
@@ -44,46 +45,48 @@
 
       }
     }
-
   }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
-.top
-  padding: 0 15px;
-  border-bottom: 1px solid #cbcbcb;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 40px;
-  z-index: 11;
-  background: #fff;
-  .sort
-    text-align: right;
-    padding-right: 5%;
-  .brand
-    padding-left: 5%;
-  .common
-    width: 40%;
+ .categroyMain
+   height 100%
+   overflow hidden
+  .top
+    padding: 0 15px;
+    border-bottom: 1px solid #cbcbcb;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
     height: 40px;
-    line-height: 40px;
-    font-size: 13px;
-    float left
-    font-weight: 700;
-    a
-      display block
-      width 100%
-    .on
-      color: #ed4044;
-      display inline-block
-      border-bottom: 2px solid #ed4044;
+    z-index: 11;
+    background: #fff;
+    .sort
+      text-align: right;
+      padding-right: 5%;
+    .brand
+      padding-left: 5%;
+    .common
+      width: 40%;
+      height: 40px;
+      line-height: 40px;
+      font-size: 13px;
+      float left
+      font-weight: 700;
+      a
+        display block
+        width 100%
+      .on
+        color: #ed4044;
+        display inline-block
+        border-bottom: 2px solid #ed4044;
 
-  .search
-    top: 13px;
-    right 20px
-    width: 14px;
-    height: 14px;
-    position: absolute;
+    .search
+      top: 13px;
+      right 20px
+      width: 14px;
+      height: 14px;
+      position: absolute;
 
 
 </style>

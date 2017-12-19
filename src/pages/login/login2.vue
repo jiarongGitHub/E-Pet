@@ -8,10 +8,8 @@
         </li>
         <li>
           <span class="mpasswordIco"></span>
-          <input type="text" placeholder="请输入图片内容" v-model="photo">
-          <!--<span>
-            <img src="icon2.jpg" alt="">
-          </span>-->
+          <input ref="code_input" type="text" placeholder="请输入图片内容" v-model="photo">
+          <div id="v_container"></div>
         </li>
         <li>
           <span class="mpasswordIco"></span>
@@ -23,6 +21,8 @@
       <div class="loginbtn">
         <a @click="login">登录</a>
       </div>
+
+     <!-- <img src="http://demo.open.renren.io/renren-fast/captcha.jpg" alt="">-->
 
       <div class="others">
         <p>合作网站登录</p>
@@ -44,8 +44,12 @@
       return{
         phone: '',
         photo:'',
-        code: ''
+        code: '',
+        verifyCode:''
       }
+    },
+    mounted(){
+      this.verifyCode = new GVerify("v_container");
     },
     methods: {
       sendCode() {
@@ -56,6 +60,17 @@
       },
 
       login() {
+        let res = this.verifyCode.validate(this.$refs.code_input.value);
+        if(res){
+          console.log('success');
+        }else{
+          Toast({
+            message: '验证码错误',
+            position: 'bottom',
+            duration: 2000
+          });
+          return
+        }
         axios.post('/api/login', {phone: this.phone, code: this.code}).then(response => {
           console.log('login result ', response.data)
           const result = response.data
@@ -132,6 +147,12 @@
             padding-top 10px
             background url(./icon2.jpg) no-repeat;
             background-size contain;
+          #v_container
+            width 100px
+            height 40px
+            position absolute
+            right 0
+            bottom 0
       .loginbtn
         padding-top 0.5em;
         text-align center;

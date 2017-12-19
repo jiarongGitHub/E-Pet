@@ -7,33 +7,35 @@
         </li>
       </ul>
     </div>
-
-    <div class="right">
-      <div class="content" v-for="(det,index) in dogTypeDet.cate_list" :key="index">
-        <a href="">{{det.title}}
+    <div ref="rightScroll" style="height: 667px">
+      <div class="right">
+        <div class="content" v-for="(det,index) in dogTypeDet.cate_list" :key="index">
+          <a href="">{{det.title}}
             <img class="cimg" src="https://static.epetbar.com/static_wap/appmall/lib/goods/cate_right_img.png" alt="">
-        </a>
-        <ul>
-          <li v-if="" v-for="(detPic,index) in det.list" :key="index">
-            <!-- 判断如果是有detPic.photo就显示detPic.photo-->
-            <a href="" class="db" v-if="detPic.photo">
-              <div>
-                <img class="image" :src="detPic.photo" alt="">
-              </div>
-              <p>{{detPic.name}}</p>
-            </a>
+          </a>
+          <ul>
+            <li v-if="" v-for="(detPic,index) in det.list" :key="index">
+              <!-- 判断如果是有detPic.photo就显示detPic.photo-->
+              <a href="" class="db" v-if="detPic.photo">
+                <div>
+                  <img class="image" :src="detPic.photo" alt="">
+                </div>
+                <p>{{detPic.name}}</p>
+              </a>
 
-            <!--判断如果是有detPic.photo就显示detPic.logo-->
-            <a href="" class="da" v-if="detPic.logo">
-              <div>
-                <img class="img" :src="detPic.logo" alt="">
-              </div>
-              <p>{{detPic.name}}</p>
-            </a>
-          </li>
-        </ul>
+              <!--判断如果是有detPic.photo就显示detPic.logo-->
+              <a href="" class="da" v-if="detPic.logo">
+                <div>
+                  <img class="img" :src="detPic.logo" alt="">
+                </div>
+                <p>{{detPic.name}}</p>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
+
   </div>
 </template>
 <script>
@@ -65,6 +67,9 @@
     watch: {
       dogType(){
         this._initBetter()
+      },
+      dogTypeDet(){
+        this._initBetter()
       }
     },
     methods: {
@@ -76,12 +81,18 @@
       _initBetter(){
         //分类导航添加滚动
         this.$nextTick(() => {
-          if (!this.scroll) {
-            this.scroll = new BScroll(this.$refs.leftScroll, {
+          if (!this.leftScroll) {
+            this.leftScroll = new BScroll(this.$refs.leftScroll, {
+              click: true
+            })
+          }
+          if(!this.rightScroll){
+            this.rightScroll = new BScroll(this.$refs.rightScroll, {
               click: true
             })
           }else{
-            this.scroll.refresh()
+            this.leftScroll.refresh()
+            this.rightScroll.refresh()
           }
         })
       }

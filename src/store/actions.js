@@ -1,4 +1,4 @@
-import {ACCEPT_DOG,ACCEPT_DOGTYPE,ACCEPT_DOGTYPEDET,ACCEPT_CATEGROY} from './types'
+import {ACCEPT_DOG,ACCEPT_DOGTYPE,ACCEPT_DOGTYPEDET,ACCEPT_CATEGROY,ACCEPT_ALLBRAND} from './types'
 import axios from 'axios'
 
 export default {
@@ -38,6 +38,17 @@ export default {
       .then(response=>{
         let data=response.data
         commit(ACCEPT_CATEGROY,{data})
+      },response=>{
+        console.log('error');
+      })
+  },
+  reqAllBrand({commit},callback){
+    let url='/api1/v3/brand/list/main.html?'
+    axios.get(`${url}do=getall&system=wap&isWeb=1&version=303&_=1513649308714`)
+      .then(response=>{
+        let data=response.data
+        commit(ACCEPT_ALLBRAND,{data})
+        callback&&callback()
       },response=>{
         console.log('error');
       })

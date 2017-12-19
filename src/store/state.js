@@ -2,5 +2,6 @@ export default {
   dogInfo:{},
   dogType:{},
   dogTypeDet:{},
-  category:{}
+  category:{},
+  allBrand:{}
 }
