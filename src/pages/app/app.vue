@@ -15,6 +15,9 @@
       headComponent,
       carousel,
       footerComponent
+    },
+    mounted(){
+      sessionStorage.removeItem('toggleSate')
     }
   }
 </script>

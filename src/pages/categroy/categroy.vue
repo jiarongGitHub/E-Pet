@@ -30,6 +30,13 @@
         isBrand:false
       }
     },
+    mounted(){
+      let toggleSate=JSON.parse(sessionStorage.getItem('toggleSate'))
+      if(toggleSate!==null) {
+        this.isSort = toggleSate.isSort
+        this.isBrand = toggleSate.isBrand
+      }
+    },
     components:{
       footerCompontent
     },
@@ -42,7 +49,7 @@
           this.isBrand=true
           this.isSort=false
         }
-
+        sessionStorage.setItem('toggleSate',JSON.stringify({isSort:this.isSort,isBrand:this.isBrand}))
       }
     }
   }

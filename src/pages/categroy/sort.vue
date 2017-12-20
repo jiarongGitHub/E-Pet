@@ -2,13 +2,13 @@
   <div>
     <div class="left" ref="leftScroll">
       <ul>
-        <li :class="{on:num===index}" v-for="(type,index) in dogType.categorys" :key="index" @click="getDet(type.cateid,index)">
+        <li :class="{on:currentIndex===index}" v-for="(type,index) in dogType.categorys" :key="index" @click="getDet(type.cateid,index)">
           {{type.name}}
         </li>
       </ul>
     </div>
     <div ref="rightScroll" style="height: 667px">
-      <div class="right">
+      <div class="right" v-lazy:background-image>
         <div class="content" v-for="(det,index) in dogTypeDet.cate_list" :key="index">
           <a href="">{{det.title}}
             <img class="cimg" src="https://static.epetbar.com/static_wap/appmall/lib/goods/cate_right_img.png" alt="">
@@ -34,8 +34,8 @@
           </ul>
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
 </template>
 <script>
@@ -45,11 +45,12 @@
     data(){
       return {
         newArr:[], //添加左边分类对应的右边的商品
-        num:0  //保存当前左右两边的下标
+        currentIndex:0
       }
     },
     computed: {
       ...mapState(['dogType', 'dogTypeDet'])
+
     },
     mounted(){
       if (!this.dogType.categorys) {
@@ -73,10 +74,10 @@
       }
     },
     methods: {
-      getDet(typeId,num){
+      getDet(typeId,current){
         this.$store.dispatch('reqDogTypeDet', typeId)
-        this.newArr[num]=this.dogTypeDet
-        this.num=this.newArr.findIndex((arr,index)=>index===num)
+        this.newArr[current]=this.dogTypeDet
+        this.currentIndex=this.newArr.findIndex((arr,index)=>index===current)
       },
       _initBetter(){
         //分类导航添加滚动
@@ -124,6 +125,8 @@
   .right
     margin-left 72px;
     margin-top 40px
+    background-repeat no-repeat
+    background-position center
     .content
       padding 30px 5px 20px;
       ul

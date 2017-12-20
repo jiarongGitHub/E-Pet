@@ -1,6 +1,6 @@
 <template>
   <div style="height: 100%">
-    <div ref="mainBrand" style="height: 100%">
+    <div class="mainBrandsWrap" ref="mainBrand"  v-lazy:background-image>
       <div class="mainBrands">
         <div class="brands" v-for="(brand,index) in category.brand" :key="index">
           <div class="title">
@@ -165,6 +165,10 @@
   }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
+.mainBrandsWrap
+  height: 100%
+  background-repeat no-repeat
+  background-position center
   .mainBrands
     .brands
       padding-top 40px;
@@ -218,138 +222,138 @@
             color #999;
             text-align center;
 
-  .allClick
-    .all
-      width 40px;
-      height 40px;
-      right 6px;
-      bottom 65px;
-      position fixed;
-      z-index 2;
-      background rgba(0, 0, 0, .4);
-      line-height 40px;
-      border-radius 50%;
-      font-size 12px;
-      color #fff;
-      text-align center;
+.allClick
+  .all
+    width 40px;
+    height 40px;
+    right 6px;
+    bottom 65px;
+    position fixed;
+    z-index 2;
+    background rgba(0, 0, 0, .4);
+    line-height 40px;
+    border-radius 50%;
+    font-size 12px;
+    color #fff;
+    text-align center;
 
-  .allDiv
+.allDiv
+  width 100%
+  height 100%
+  overflow hidden
+  background #fff
+  position absolute
+  top 0
+  bottom 0
+  left 0
+  right 0
+  .wap-top-bar
+  .head-top
     width 100%
-    height 100%
-    overflow hidden
+    height 50px
+    line-height 50px
+    border-bottom 1px solid #f3f3f3
+    color #333
     background #fff
     position absolute
+    z-index 300
+    .aback
+      background url(./back.png) no-repeat
+      height 25px
+      width 25px
+      position absolute
+      margin-top 10px
+      left 10px
+    .all-title
+      width 100%
+      text-overflow ellipsis
+      white-space nowrap
+      overflow hidden
+      display block
+      margin 0 auto
+      font-size 16px
+      color #000
+      text-align center
+    .homeImg
+      background url(./home.png) no-repeat
+      height 30px
+      width 30px
+      position absolute
+      top 10px
+      right 20px
+  .content
+    background #f3f4f5
+    padding 45px 0 0
+    padding-top 50px
+    box-sizing border-box
+    .item
+      h2
+        text-indent 15px
+        line-height 24px
+        font-size 12px
+        color #999
+        font-weight 400
+      .brandA
+        display block
+        background #fff
+        color #333
+        .brand-wrapper
+          padding 15px
+          border-bottom 1px solid #f3f4f5
+          margin-right 10px
+          overflow hidden
+          .brand-img
+            text-align center
+            background url(./default-epet2.jpg) no-repeat center center #fff
+            background-size 120px auto
+            width 30%
+            max-width 150px
+            border 1px solid #f3f4f5
+            padding-top 50px
+            position relative
+            float left
+            margin-top -2px
+            margin-left -10px
+            img
+              max-width 90%
+              height 40px
+              margin 5px auto
+              position absolute
+              top 0
+              left 0
+              right 0
+              display block
+              border 0
+          .brand-name
+            margin 5px 0 5px 20px
+            float left
+            .first
+              font-size 14px
+              margin-bottom 5px
+            .second
+              font-size 12px
+              color #999
+  .wrapper-1
     top 0
     bottom 0
-    left 0
-    right 0
-    .wap-top-bar
-    .head-top
-      width 100%
-      height 50px
-      line-height 50px
-      border-bottom 1px solid #f3f3f3
-      color #333
-      background #fff
-      position absolute
-      z-index 300
-      .aback
-        background url(./back.png) no-repeat
-        height 25px
-        width 25px
-        position absolute
-        margin-top 10px
-        left 10px
-      .all-title
-        width 100%
-        text-overflow ellipsis
-        white-space nowrap
-        overflow hidden
+    right 4px
+    width 10px
+    z-index 201
+    position fixed
+    text-align center
+    padding-top 155px
+    .cell-1
+      display table-cell
+      height 100%
+      vertical-align middle
+      span
         display block
-        margin 0 auto
-        font-size 16px
-        color #000
-        text-align center
-      .homeImg
-        background url(./home.png) no-repeat
-        height 30px
-        width 30px
-        position absolute
-        top 10px
-        right 20px
-    .content
-      background #f3f4f5
-      padding 45px 0 0
-      padding-top 50px
-      box-sizing border-box
-      .item
-        h2
-          text-indent 15px
-          line-height 24px
-          font-size 12px
-          color #999
-          font-weight 400
-        .brandA
-          display block
-          background #fff
-          color #333
-          .brand-wrapper
-            padding 15px
-            border-bottom 1px solid #f3f4f5
-            margin-right 10px
-            overflow hidden
-            .brand-img
-              text-align center
-              background url(./default-epet2.jpg) no-repeat center center #fff
-              background-size 120px auto
-              width 30%
-              max-width 150px
-              border 1px solid #f3f4f5
-              padding-top 50px
-              position relative
-              float left
-              margin-top -2px
-              margin-left -10px
-              img
-                max-width 90%
-                height 40px
-                margin 5px auto
-                position absolute
-                top 0
-                left 0
-                right 0
-                display block
-                border 0
-            .brand-name
-              margin 5px 0 5px 20px
-              float left
-              .first
-                font-size 14px
-                margin-bottom 5px
-              .second
-                font-size 12px
-                color #999
-    .wrapper-1
-      top 0
-      bottom 0
-      right 4px
-      width 10px
-      z-index 201
-      position fixed
-      text-align center
-      padding-top 155px
-      .cell-1
-        display table-cell
-        height 100%
-        vertical-align middle
-        span
-          display block
-          height 12px
-          margin-top 2px
-          font-size 12px
-        .current
-          color #fe3e3e
-          font-weight 700
+        height 12px
+        margin-top 2px
+        font-size 12px
+      .current
+        color #fe3e3e
+        font-weight 700
 
 
 </style>
