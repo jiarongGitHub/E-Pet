@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div ref="mainBrand" style="height: 667px">
+  <div style="height: 100%">
+    <div ref="mainBrand" style="height: 100%">
       <div class="mainBrands">
         <div class="brands" v-for="(brand,index) in category.brand" :key="index">
           <div class="title">
@@ -20,33 +20,6 @@
             </ul>
           </div>
         </div>
-        <!-- <div class="allDiv" v-show="isShow">
-           <div class="wap-top-bar">
-             <div class="head-top">
-               <a class="aback" @click="hideAll"></a>
-               <span class="all-title">全部品牌</span>
-               <a href="" class="homeImg"></a>
-             </div>
-           </div>
-
-           <mt-index-list class="content">
-             <mt-index-section class="item" v-for="(content,index) in allBrand.brand" :index="content.order">
-               <div v-for="(item,index) in content.list">
-                 <a href="" class="brandA">
-                   <div class="brand-wrapper">
-                     <div class="brand-img">
-                       <img :src="item.logo" alt="">
-                     </div>
-                     <div class="brand-name">
-                       <p class="first">{{item.name}}</p>
-                       <p class="second">{{item.address}}</p>
-                     </div>
-                   </div>
-                 </a>
-               </div>
-             </mt-index-section>
-           </mt-index-list>
-         </div>-->
       </div>
     </div>
     <div class="allClick">

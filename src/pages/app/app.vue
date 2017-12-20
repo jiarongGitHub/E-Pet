@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app">
     <headComponent/>
     <carousel/>
     <footerComponent/>
@@ -20,5 +20,6 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-
+.app
+  height 100%
 </style>
