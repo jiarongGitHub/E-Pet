@@ -101,58 +101,58 @@
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
   .left
-    position: fixed;
-    top: 40px;
-    left: 0;
-    bottom: 0;
-    padding-bottom: 45px;
-    background: #fff;
+    position fixed;
+    top 40px;
+    left 0;
+    bottom 0;
+    padding-bottom 45px;
+    background #fff;
     li
-      padding: 5px 0;
-      border-bottom: 1px solid #f3f4f5;
-      width: 70px;
-      height: 50px;
-      font-size: 13px;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      text-align: center;
+      padding 5px 0;
+      border-bottom 1px solid #f3f4f5;
+      width 70px;
+      height 50px;
+      font-size 13px;
+      text-overflow ellipsis;
+      white-space nowrap;
+      text-align center;
       line-height 50px
     .on
-      background: #f3f4f5;
-      color: #ed4044;
+      background #f3f4f5;
+      color #ed4044;
 
   .right
-    margin-left: 72px;
+    margin-left 72px;
     margin-top 40px
     .content
-      padding: 30px 5px 20px;
+      padding 30px 5px 20px;
       ul
-        overflow: hidden
+        overflow hidden
       a
-        font-size: 12px;
+        font-size 12px;
         .cimg
           float right
-          height: 10px;
-          margin-top: 5px;
+          height 10px;
+          margin-top 5px;
       li
-        width: 28%;
-        padding: 0 5px;
-        margin-top: 10px;
+        width 28%;
+        padding 0 5px;
+        margin-top 10px;
         float left
         .db
           display block
           .image
-            top: 0;
-            left: 0;
-            width: 100%;
+            top 0;
+            left 0;
+            width 100%;
         .da
           display block
           width 100%
           div
-            border: 1px solid #f3f4f5;
-            padding: 55px 10px 10px;
-            background: url(./default-epet2.jpg) no-repeat center center #fff;
-            background-size: 120px auto;
+            border 1px solid #f3f4f5;
+            padding 55px 10px 10px;
+            background url(./default-epet2.jpg) no-repeat center center #fff;
+            background-size 120px auto;
             position relative
             width 100%
             .img
@@ -168,9 +168,9 @@
           text-align center
           margin-top 10px
           color #000
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          height: 20px;
+          overflow hidden;
+          text-overflow ellipsis;
+          white-space nowrap;
+          height 20px;
           line-height 20px
 </style>

@@ -52,41 +52,41 @@
    height 100%
    overflow hidden
   .top
-    padding: 0 15px;
-    border-bottom: 1px solid #cbcbcb;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    height: 40px;
-    z-index: 11;
-    background: #fff;
+    padding 0 15px;
+    border-bottom 1px solid #cbcbcb;
+    position fixed;
+    left 0;
+    right 0;
+    top 0;
+    height 40px;
+    z-index 11;
+    background #fff;
     .sort
-      text-align: right;
-      padding-right: 5%;
+      text-align right;
+      padding-right 5%;
     .brand
-      padding-left: 5%;
+      padding-left 5%;
     .common
-      width: 40%;
-      height: 40px;
-      line-height: 40px;
-      font-size: 13px;
+      width 40%;
+      height 40px;
+      line-height 40px;
+      font-size 13px;
       float left
-      font-weight: 700;
+      font-weight 700;
       a
         display block
         width 100%
       .on
-        color: #ed4044;
+        color #ed4044;
         display inline-block
-        border-bottom: 2px solid #ed4044;
+        border-bottom 2px solid #ed4044;
 
     .search
-      top: 13px;
+      top 13px;
       right 20px
-      width: 14px;
-      height: 14px;
-      position: absolute;
+      width 14px;
+      height 14px;
+      position absolute;
 
 
 </style>

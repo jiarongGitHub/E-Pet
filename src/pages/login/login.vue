@@ -103,15 +103,15 @@
               width 100%
               margin-top 2px
             i
-              display: block;
-              width: 0px;
-              height: 0px;
-              border-left: 10px solid transparent;
-              border-right: 10px solid transparent;
-              border-bottom: 10px solid #fff;
-              position: absolute;
-              bottom: 0;
-              left: 0;
-              right: 0;
-              margin: auto;
+              display block;
+              width 0px;
+              height 0px;
+              border-left 10px solid transparent;
+              border-right 10px solid transparent;
+              border-bottom 10px solid #fff;
+              position absolute;
+              bottom 0;
+              left 0;
+              right 0;
+              margin auto;
 </style>

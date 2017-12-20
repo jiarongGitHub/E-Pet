@@ -58,17 +58,17 @@
           outline none;
           padding-left 10px
         .mNameIco
-          float: left;
-          display: inline-block;
-          width: 30px
+          float left;
+          display inline-block;
+          width 30px
           height 20px
-          background: url(./icon1.jpg) no-repeat;
-          background-size: contain;
+          background url(./icon1.jpg) no-repeat;
+          background-size contain;
           padding-top 10px
         .mpasswordIco
           float left;
           display inline;
-          width: 30px
+          width 30px
           height 20px
           padding-top 10px
           background url(./icon2.jpg) no-repeat;

@@ -77,8 +77,8 @@
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
   .main
-    max-width: 640px
-    margin: auto
+    max-width 640px
+    margin auto
     position fixed
     height 86px
     z-index 50
@@ -183,7 +183,7 @@
                 text-align center
                 color #666
                 .rela
-                  position: relative
+                  position relative
         .find_nav_list
            ul
              .on

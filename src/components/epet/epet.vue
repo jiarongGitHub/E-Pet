@@ -283,13 +283,13 @@
         .cmallPlayIco
           background: url(./play.png) 0 0 no-repeat;
           background-size: contain;
-          width: 20px;
-          height: 20px;
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          margin-left: -10px;
-          margin-top: -10px;
+          width 20px;
+          height 20px;
+          position absolute;
+          left 50%;
+          top 50%;
+          margin-left -10px;
+          margin-top -10px;
         .ft12
           font-size 12px
         .c999
@@ -302,11 +302,11 @@
             color #333
             margin-bottom 5px
           .cmallViewIco
-            display: inline-block;
-            width: 10px;
-            height: 9px;
-            background: url(./view-black.png) 0 0 no-repeat;
-            background-size: contain;
+            display inline-block;
+            width 10px;
+            height 9px;
+            background url(./view-black.png) 0 0 no-repeat;
+            background-size contain;
             margin-right 3px
           i
             font-style normal
@@ -336,7 +336,7 @@
         font-size 14px
       .ft
         padding 15px 0 5px
-        text-align: center
+        text-align center
         span
           padding-right 10px
         .bt
