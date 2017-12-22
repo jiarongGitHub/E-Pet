@@ -147,13 +147,13 @@
         }
       })
       if(this.dogInfo.datas){
-        this.newArr=this.dogInfo.datas.filter(data=>data.type==='3'&&data.index==='2435')
+        this.newArr=this.dogInfo.datas.filter(data=>data.type==='3'&&data.index==='3047')
       }
     },
     watch: {
       dogInfo () {
         if(this.dogInfo.datas){
-          this.newArr=this.dogInfo.datas.filter(data=>data.type==='3'&&data.index==='2435')
+          this.newArr=this.dogInfo.datas.filter(data=>data.type==='3'&&data.index==='3047')
         }
       }
     },

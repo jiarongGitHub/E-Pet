@@ -53,7 +53,7 @@
     },
     methods: {
       sendCode() {
-        const url = `/api/sendcode?phone=${this.phone}`
+        const url = `/apicode/sendcode?phone=${this.phone}`
         axios.get(url).then(response => {
           console.log('sendcode result ', response.data)
         })
@@ -71,7 +71,7 @@
           });
           return
         }
-        axios.post('/api/login', {phone: this.phone, code: this.code}).then(response => {
+        axios.post('/apicode/login', {phone: this.phone, code: this.code}).then(response => {
           console.log('login result ', response.data)
           const result = response.data
           if (result.code == 0) {
